@@ -40,6 +40,7 @@ int main()
 		if (msg == "quit") break;
 
 		send(sock, msg.c_str(), msg.size(), 0);
+		//如果不发送消息, send会阻塞, 导致不能recv服务端的消息
 
 		int n = recv(sock, buf, sizeof(buf) - 1, 0);
 		if (n > 0)
