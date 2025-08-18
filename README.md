@@ -1,0 +1,3 @@
+# select 与 Poll 都需要在while循环里频繁检测, 与内核通信需要不断地拷贝文件描述符集合
+# select可以跨平台, 但是检测的文件描述符上限是1024, poll只能在linux平台使用, 无上限
+# select 和 poll基于线性表
